@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sravani Portfolio</title>
+
+    <style>
+
+        /* ---------- BASIC RESET ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* ---------- NAVIGATION ---------- */
+
+        nav {
+            background-color: #17202a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: rgb(160, 142, 142);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: rgb(237, 230, 230);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5dade2;
+        }
+
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            min-height: 90vh;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+            gap: 40px;
+
+            padding: 60px 10%;
+
+            background: linear-gradient(
+                135deg,
+                #d6eaf8,
+                #f8f9f9
+            );
+
+            animation: pageEntry 1s ease;
+        }
+
+        .hero-text {
+            animation: slideLeft 1s ease;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            color: #17202a;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 span {
+            color: #2980b9;
+        }
+
+        .hero-text h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #34495e;
+        }
+
+        .hero-text p {
+            max-width: 550px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background-color: #17202a;
+            transform: translateY(-5px);
+        }
+
+
+        /* ---------- PROFILE BOX ---------- */
+
+        .profile {
+            display: grid;
+            place-items: center;
+
+            animation: slideRight 1s ease;
+        }
+
+        .profile-box {
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #9f6cd2,
+                #85c1e9
+            );
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+
+            transition: 0.5s;
+        }
+
+        .profile-box:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+
+        /* ---------- COMMON SECTION ---------- */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #17202a;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .about-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+            transition: 0.4s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+            transition: 0.4s;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background-color: #d6eaf8;
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+            color: #b870db;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+            transition:
+                transform 0.4s,
+                box-shadow 0.4s;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: #a776c9;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #555;
+        }
+
+        .project-number {
+            font-size: 35px;
+            font-weight: bold;
+            color: #aed6f1;
+            margin-bottom: 5px;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-container {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #716bc7;
+
+            box-shadow:
+                0 0 5px #87a3b6;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .submit-btn {
+            border: none;
+            cursor: pointer;
+
+            padding: 12px 25px;
+
+            background-color: #8e67d7;
+            color: white;
+
+            border-radius: 25px;
+
+            transition: 0.4s;
+        }
+
+        .submit-btn:hover {
+            background-color: #17202a;
+            transform: translateY(-3px);
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background-color: #17202a;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ---------- ANIMATIONS ---------- */
+
+        @keyframes pageEntry {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        @keyframes slideLeft {
+
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+
+        @keyframes slideRight {
+
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .projects-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-box {
+                width: 220px;
+                height: 220px;
+                font-size: 55px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>Sravani</h2>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>
+                Hi, I'm <span>Sravani</span>
+            </h1>
+
+            <h3>
+                BCA Graduate & Aspiring Developer
+            </h3>
+
+            <p>
+                Welcome to my personal portfolio website.
+                I am interested in web development, cloud
+                technologies and data science.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-box">
+                S
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>Know more about me</p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a BCA graduate interested in
+                    software development and modern
+                    technologies.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>My Goal</h3>
+
+                <p>
+                    My goal is to improve my technical
+                    skills and build useful and
+                    user-friendly applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>My Skills</h2>
+
+            <p>Technologies I am learning</p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Web Structure</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Web Design</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>MySQL</h3>
+                <p>Database</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>AWS</h3>
+                <p>Cloud Computing</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Web Interaction</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>Data Science</h3>
+                <p>Data Analysis</p>
+            </div>
+
+
+            <div class="skill">
+                <h3>Figma</h3>
+                <p>UI/UX Design</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>My Projects</h2>
+
+            <p>Some of my academic projects</p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>AI Smart Student Management</h3>
+
+                <p>
+                    A cloud-based student management
+                    system using AI and AWS technologies.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>Student Attendance System</h3>
+
+                <p>
+                    A web-based application for managing
+                    student attendance and records.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>Data Science Project</h3>
+
+                <p>
+                    A data analysis project that uses
+                    datasets to find useful patterns.
+                </p>
+
+            </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>Let's connect</p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>Get In Touch</h3>
+
+                <p>
+                    📧 Email: sravani@example.com
+                </p>
+
+                <p>
+                    📱 Phone: +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    📍 Location: Bengaluru, India
+                </p>
+
+                <p>
+                    I am always interested in learning
+                    new technologies and working on
+                    interesting projects.
+                </p>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <form>
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <textarea
+                        placeholder="Your Message"
+                        required>
+                    </textarea>
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Sravani Portfolio 
+            
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
