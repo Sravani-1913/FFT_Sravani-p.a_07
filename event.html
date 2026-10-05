@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dance Club Meet 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f2f8;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #5b2c83;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 19px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 25px;
+        }
+
+        nav a:hover {
+            background-color: #5b2c83;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px #bbb;
+        }
+
+        section h2 {
+            color: #5b2c83;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        section p {
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Event Details */
+        .details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #eee4f7;
+            padding: 22px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .box h3 {
+            color: #5b2c83;
+            margin-bottom: 10px;
+        }
+
+        /* Activities */
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .activity {
+            padding: 18px;
+            background-color: #f3edf7;
+            border-left: 5px solid #5b2c83;
+            border-radius: 6px;
+        }
+
+        .activity h3 {
+            margin-bottom: 8px;
+            color: #5b2c83;
+        }
+
+        /* Schedule */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 13px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #5b2c83;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        /* Guests */
+        .guests {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .guest {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .guest h3 {
+            color: #5b2c83;
+            margin-bottom: 8px;
+        }
+
+        /* Rules */
+        .rules li {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        /* Registration */
+        .register {
+            text-align: center;
+        }
+
+        .register p {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #5b2c83;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3d1c59;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .guests {
+                grid-template-columns: 1fr;
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Event Header -->
+    <header>
+        <h1>Dance Club Meet 2026</h1>
+        <p>Move • Groove • Express • Celebrate</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#details">Details</a>
+        <a href="#activities">Activities</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#guests">Guests</a>
+        <a href="#register">Register</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about">
+
+            <h2>About Dance Club Meet</h2>
+
+            <p>
+                Dance Club Meet 2026 is a college cultural event
+                organized for students who are interested in dance,
+                music and stage performances. The event gives students
+                an opportunity to show their talent and learn different
+                dance styles from experienced performers.
+            </p>
+
+            <br>
+
+            <p>
+                Students can take part in solo, duet and group
+                performances. The program also includes dance
+                workshops, fun activities and a special performance
+                by the college dance team.
+            </p>
+
+        </section>
+
+        <!-- Event Details -->
+        <section id="details">
+
+            <h2>Event Details</h2>
+
+            <div class="details">
+
+                <div class="box">
+                    <h3>Date</h3>
+                    <p>15 October 2026</p>
+                </div>
+
+                <div class="box">
+                    <h3>Time</h3>
+                    <p>10:00 AM - 4:30 PM</p>
+                </div>
+
+                <div class="box">
+                    <h3>Venue</h3>
+                    <p>College Auditorium</p>
+                </div>
+
+            </div>
+
+            <br>
+
+            <p>
+                <b>Organized by:</b> College Dance Club
+            </p>
+
+            <p>
+                <b>Participants:</b> Students from all departments
+            </p>
+
+        </section>
+
+        <!-- Activities -->
+        <section id="activities">
+
+            <h2>Event Activities</h2>
+
+            <div class="activities">
+
+                <div class="activity">
+                    <h3>Solo Dance</h3>
+                    <p>
+                        Students can perform individually and
+                        present their favourite dance style.
+                    </p>
+                </div>
+
+                <div class="activity">
+                    <h3>Group Dance</h3>
+                    <p>
+                        Teams can perform together and present
+                        a creative group performance.
+                    </p>
+                </div>
+
+                <div class="activity">
+                    <h3>Dance Workshop</h3>
+                    <p>
+                        Participants can learn basic steps and
+                        techniques from trained dancers.
+                    </p>
+                </div>
+
+                <div class="activity">
+                    <h3>Fun Dance Battle</h3>
+                    <p>
+                        A friendly dance activity where students
+                        can enjoy music and compete with friends.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule">
+
+            <h2>Event Schedule</h2>
+
+            <table>
+
+                <tr>
+                    <th>Time</th>
+                    <th>Program</th>
+                </tr>
+
+                <tr>
+                    <td>10:00 AM</td>
+                    <td>Welcome and Registration</td>
+                </tr>
+
+                <tr>
+                    <td>10:30 AM</td>
+                    <td>Opening Dance Performance</td>
+                </tr>
+
+                <tr>
+                    <td>11:00 AM</td>
+                    <td>Dance Workshop</td>
+                </tr>
+
+                <tr>
+                    <td>12:30 PM</td>
+                    <td>Lunch Break</td>
+                </tr>
+
+                <tr>
+                    <td>1:30 PM</td>
+                    <td>Solo and Group Performances</td>
+                </tr>
+
+                <tr>
+                    <td>3:00 PM</td>
+                    <td>Dance Battle</td>
+                </tr>
+
+                <tr>
+                    <td>4:00 PM</td>
+                    <td>Prize Distribution</td>
+                </tr>
+
+                <tr>
+                    <td>4:30 PM</td>
+                    <td>Closing Ceremony</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Guests -->
+        <section id="guests">
+
+            <h2>Special Guests</h2>
+
+            <div class="guests">
+
+                <div class="guest">
+                    <h3>Arjun Kumar</h3>
+                    <p>Professional Choreographer</p>
+                    <p>Guest Mentor</p>
+                </div>
+
+                <div class="guest">
+                    <h3>Meera Sharma</h3>
+                    <p>Contemporary Dance Artist</p>
+                    <p>Workshop Trainer</p>
+                </div>
+
+                <div class="guest">
+                    <h3>Rahul Verma</h3>
+                    <p>Dance Performer</p>
+                    <p>Competition Judge</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Rules -->
+        <section>
+
+            <h2>Event Rules</h2>
+
+            <ul class="rules">
+
+                <li>Participants must carry their college ID card.</li>
+
+                <li>Participants should report at the venue
+                    30 minutes before their performance.</li>
+
+                <li>Music tracks must be submitted before the event.</li>
+
+                <li>Participants should maintain discipline
+                    during the program.</li>
+
+                <li>Costumes should be suitable for a college event.</li>
+
+                <li>The decision of the judges will be followed
+                    for the competition.</li>
+
+            </ul>
+
+        </section>
+
+        <!-- Registration -->
+        <section id="register" class="register">
+
+            <h2>Registration</h2>
+
+            <p>
+                Interested students can register for the Dance Club
+                Meet 2026 and participate in the activities.
+            </p>
+
+            <button onclick="registerEvent()">
+                Register Now
+            </button>
+
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                <b>Dance Club Coordinator:</b> Ananya Rao
+            </p>
+
+            <p>
+                <b>Email:</b> danceclub@college.edu
+            </p>
+
+            <p>
+                <b>Venue:</b> College Auditorium
+            </p>
+
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Dance Club Meet | College Dance Club</p>
+        <p>College Cultural Committee</p>
+
+    </footer>
+
+    <script>
+
+        function registerEvent() {
+            alert("Registration for Dance Club Meet 2026 is open!");
+        }
+
+    </script>
+
+</body>
+
+</html>
